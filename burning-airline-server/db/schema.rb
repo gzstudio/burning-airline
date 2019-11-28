@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_073323) do
+ActiveRecord::Schema.define(version: 2019_11_28_084921) do
 
   create_table "airplanes", force: :cascade do |t|
     t.text "name"
@@ -20,4 +20,16 @@ ActiveRecord::Schema.define(version: 2019_11_28_073323) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "flights", force: :cascade do |t|
+    t.integer "flight_number"
+    t.date "date"
+    t.string "origin"
+    t.string "destination"
+    t.integer "airplane_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["airplane_id"], name: "index_flights_on_airplane_id"
+  end
+
+  add_foreign_key "flights", "airplanes"
 end
