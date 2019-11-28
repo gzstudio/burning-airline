@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  flight_number: 1
+  date: 2019-11-28
+  origin: MyString
+  destination: MyString
+  airplane: one
+
+two:
+  flight_number: 1
+  date: 2019-11-28
+  origin: MyString
+  destination: MyString
+  airplane: two
