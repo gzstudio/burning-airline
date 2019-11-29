@@ -20,9 +20,7 @@ class AirplaneForm extends React.Component {
     constructor() {
         super();
         this.state = {
-            name: '',
-            rows: '',
-            columns: ''
+            content: '',
         };
         this._handleChange = this._handleChange.bind(this);
         this._handleSubmit = this._handleSubmit.bind(this);
@@ -30,17 +28,13 @@ class AirplaneForm extends React.Component {
 
     _handleChange(e) {
         this.setState({
-            name: e.target.value,
-            rows: e.target.value,
-            columns: e.target.value
+            content: e.target.value,
         });
     }
 
     _handleSubmit(e) {
         e.preventDefault();
         console.log(this.state.name);
-        console.log(this.state.rows);
-        console.log(this.state.columns);
     }
 
     render() {
