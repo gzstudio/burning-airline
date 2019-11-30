@@ -46,14 +46,14 @@ function FlightsList(props) {
 
             <tbody>
             {
-                    props.flights.map(f => (<tr>
-                        <td>{f.id}</td>
-                        <td>{f.date}</td>
-                        <td>{f.flight_number}</td>
-                        <td>{f.origin}</td>
-                        <td>{f.destination}</td>
-                    </tr>)
-                    )  
+                props.flights.map(f => (<tr>
+                    <td>{f.id}</td>
+                    <td>{f.date}</td>
+                    <td>{f.flight_number}</td>
+                    <td>{f.origin}</td>
+                    <td>{f.destination}</td>
+                </tr>)
+                )  
             }
             </tbody>
         </table>

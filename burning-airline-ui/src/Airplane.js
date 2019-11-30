@@ -27,8 +27,8 @@ class Airplane extends React.Component {
         return(
             <div>
                 <h2>Airplanes</h2>
-                {/* <AirplaneForm onSubmit={this.saveAirplane} /> */}
-                <AirplanesList airplanes={this.state.airplanes} />
+                <input type="text" placeholder="search" />
+                <AirplanesList airplanes={this.state.airplanes} search="" />
             </div>
         )
     }
@@ -36,7 +36,12 @@ class Airplane extends React.Component {
 
 class AirplanesList extends React.Component {
     render() {
-        return (
+                
+        let planes = this.props.airplanes;
+        if(this.props.search.length > 0 ) {
+            planes = planes.filter(x => x.name.includes(this.props.search))
+        }
+        return (    
             <table class="table">
                 <thead>
                     <tr>
@@ -49,7 +54,7 @@ class AirplanesList extends React.Component {
                 
                 <tbody>
                 {
-                    this.props.airplanes.map(a => 
+                planes.map(a => 
                     (<tr>
                         <td>{a.id}</td>
                         <td>{a.name}</td>
@@ -63,66 +68,5 @@ class AirplanesList extends React.Component {
         )
     }
 }
-
-// class AirplaneForm extends React.Component {
-//     constructor() {
-//         super();
-//         this.state = {
-//             content: '',
-//         };
-//         this._handleChange = this._handleChange.bind(this);
-//         this._handleSubmit = this._handleSubmit.bind(this);
-//     }
-
-//     _handleChange(e) {
-//         this.setState({
-//             content: e.target.value,
-//         });
-//     }
-
-//     _handleSubmit(e) {
-//         e.preventDefault();
-//         console.log(this.state.name);
-//     }
-
-//     render() {
-//         return (
-//             <React.Fragment>
-//             <form onSubmit={this._handleSubmit}>
-//                 <nav>
-//                     <a href="/Planes/">Planes</a>
-//                     <a href="/Flights/">Flights</a> 
-//                     <a href="/Admin/">Admin</a> 
-//                 </nav>
-                
-//                 <div>
-//                 <input type="submit" value="Create Plane" />
-//                 </div>
-
-//                 <label>
-//                 Name
-//                 <input onChange={this._handleChange} />
-//                 </label>
-
-//                 <label>
-//                 Rows
-//                 <input onChange={this._handleChange} />
-//                 </label>
-
-//                 <label>
-//                 Columns
-//                 <input onChange={this._handleChange} />
-//                 </label>
-
-//                 <input type="submit" value="Save" />
-//                 <input type="submit" value="Cancel" />
-
-//             </form>
-
-//             <h3>Airplane details {this.state.name}</h3>
-//             </React.Fragment>
-//         );
-//     }
-// }
 
 export default Airplane;
