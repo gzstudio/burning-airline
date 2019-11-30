@@ -4,7 +4,6 @@ import Flight from './Flight'
 import Airplane from './Airplane'
 import User from './User';
 
-
 class Navigation extends React.Component {
     render() {
         return(
@@ -17,12 +16,15 @@ class Navigation extends React.Component {
                     </ul>
 
                 </nav>
-
+                
+                <div class="container">
                 <Router>
                     <Airplane path='/airplane' />
                     <Flight path='/flight' />
                     <User path=' /user/:userId' /> 
                 </Router>
+                </div>
+
             </div>
         )
     }
