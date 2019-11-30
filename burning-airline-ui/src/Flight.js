@@ -33,16 +33,30 @@ class Flight extends React.Component {
 
 function FlightsList(props) {
     return(
-        <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Airplane</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Flight Number</th>
+                    <th scope="col">Origin</th>
+                    <th scope="col">Destination</th>
+                </tr>
+            </thead>
+
+            <tbody>
             {
-                props.flights.map( f => ( <div key= {f.id}>
-                    <p>{f.date}</p>
-                    <p>{f.flight_number}</p>
-                    <p>{f.origin}</p>
-                    <p>{f.destination}</p>
-                </div>))
+                    props.flights.map(f => (<tr>
+                        <td>{f.id}</td>
+                        <td>{f.date}</td>
+                        <td>{f.flight_number}</td>
+                        <td>{f.origin}</td>
+                        <td>{f.destination}</td>
+                    </tr>)
+                    )  
             }
-        </div>
+            </tbody>
+        </table>
     )
 }
 

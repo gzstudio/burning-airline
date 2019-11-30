@@ -29,41 +29,6 @@ class Airplane extends React.Component {
                 <h2>Airplanes</h2>
                 {/* <AirplaneForm onSubmit={this.saveAirplane} /> */}
                 <AirplanesList airplanes={this.state.airplanes} />
-
-                {/* <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col">Airplane number</th>
-                            <th scope="col">Flight number</th>
-                            <th scope="col">Origin</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                        </tr>
-                    </tbody>
-                </table> */}
             </div>
         )
     }
@@ -72,15 +37,29 @@ class Airplane extends React.Component {
 class AirplanesList extends React.Component {
     render() {
         return (
-            <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Rows</th>
+                        <th scope="col">Cols</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
                 {
-                    this.props.airplanes.map(a => (<div key={a.id}>
-                        <p>{a.name}</p>
-                        <p>{a.rows}</p>
-                        <p>{a.cols}</p>
-                    </div>))
-                }
-            </div>
+                    this.props.airplanes.map(a => 
+                    (<tr>
+                        <td>{a.id}</td>
+                        <td>{a.name}</td>
+                        <td>{a.rows}</td>
+                        <td>{a.cols}</td>
+                    </tr>)
+                    )  
+                }   
+                </tbody>
+            </table>
         )
     }
 }
