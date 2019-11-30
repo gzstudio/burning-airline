@@ -1,0 +1,32 @@
+<%= form_with(model: reservation, local: true) do |form| %>
+  <% if reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+      <ul>
+        <% reservation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :seat_id %>
+    <%= form.text_field :seat_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id_id %>
+    <%= form.select :user_id_id, User.pluck(:name, :id) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flight_id_id %>
+    <%= form.select :flight_id_id, Flight.pluck(:flight_number, :id) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
