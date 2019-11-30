@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 2019_11_30_034500) do
 
   create_table "reservations", force: :cascade do |t|
     t.string "seat_id"
-    t.integer "user_id_id", null: false
-    t.integer "flight_id_id", null: false
+    t.integer "user_id", null: false
+    t.integer "flight_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["flight_id_id"], name: "index_reservations_on_flight_id_id"
-    t.index ["user_id_id"], name: "index_reservations_on_user_id_id"
+    t.index ["flight_id"], name: "index_reservations_on_flight_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +51,6 @@ ActiveRecord::Schema.define(version: 2019_11_30_034500) do
   end
 
   add_foreign_key "flights", "airplanes"
-  add_foreign_key "reservations", "flight_ids"
-  add_foreign_key "reservations", "user_ids"
+  add_foreign_key "reservations", "flights"
+  add_foreign_key "reservations", "users"
 end
