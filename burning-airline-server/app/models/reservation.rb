@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :flight_id
+  belongs_to :user
+  belongs_to :flight
 end

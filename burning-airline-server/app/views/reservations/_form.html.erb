@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :user_id_id %>
-    <%= form.select :user_id_id, User.pluck(:name, :id) %>
+    <%= form.label :user_id %>
+    <%= form.select :user_id, User.pluck(:name, :id) %>
   </div>
 
   <div class="field">
-    <%= form.label :flight_id_id %>
-    <%= form.select :flight_id_id, Flight.pluck(:flight_number, :id) %>
+    <%= form.label :flight_id %>
+    <%= form.select :flight_id, Flight.pluck(:flight_number, :id) %>
   </div>
 
   <div class="actions">

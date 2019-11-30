@@ -46,6 +46,7 @@ class AirplanesList extends React.Component {
                         <th scope="col">Cols</th>
                     </tr>
                 </thead>
+                
                 <tbody>
                 {
                     this.props.airplanes.map(a => 
