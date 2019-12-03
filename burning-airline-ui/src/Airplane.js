@@ -42,7 +42,7 @@ class AirplanesList extends React.Component {
             planes = planes.filter(x => x.name.includes(this.props.searchTerm))
         }
         return (    
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

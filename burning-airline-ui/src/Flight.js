@@ -32,7 +32,7 @@ class Flight extends React.Component {
     render() {
         return(
             <div>
-                <h3 class="text-left">Flights</h3> <br/>
+                <h3 className="text-left">Flights</h3> <br/>
                 <FlightsList flights={this.state.flights} airplanes={this.state.airplanes} />
             </div>
         )
@@ -41,8 +41,6 @@ class Flight extends React.Component {
 
 function FlightsList(props) {
     
-
-
     let renderFlights = () => {
         if(props.flights !== null && props.airplanes  !== null)
         {
@@ -60,7 +58,7 @@ function FlightsList(props) {
     }
 
     return(
-        <table class="table">
+        <table className="table">
             <thead>
                 <tr>
                     <th scope="col">Date</th>
