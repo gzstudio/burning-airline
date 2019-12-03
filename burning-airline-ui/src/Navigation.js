@@ -7,7 +7,7 @@ import User from './User';
 class Navigation extends React.Component {
     render() {
         return(
-            <div>
+            <React.Fragment>
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                     <ul class="navbar-nav">
                         <li class="nav-item"><Link class="nav-link" to="airplane">Planes</Link></li>
@@ -25,7 +25,7 @@ class Navigation extends React.Component {
                 </Router>
                 </div>
 
-            </div>
+            </React.Fragment>
         )
     }
 }
