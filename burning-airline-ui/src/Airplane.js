@@ -27,8 +27,8 @@ class Airplane extends React.Component {
         return(
             <div>
                 <h2>Airplanes</h2>
-                <input type="text" placeholder="search" />
-                <AirplanesList airplanes={this.state.airplanes} search="" />
+                <input type="text" value={this.props.searchTerm} placeholder="search" />
+                <AirplanesList data={this.state.airplanes} searchTerm="" />
             </div>
         )
     }
@@ -37,9 +37,9 @@ class Airplane extends React.Component {
 class AirplanesList extends React.Component {
     render() {
                 
-        let planes = this.props.airplanes;
-        if(this.props.search.length > 0 ) {
-            planes = planes.filter(x => x.name.includes(this.props.search))
+        let planes = this.props.data;
+        if(this.props.searchTerm.length > 0 ) {
+            planes = planes.filter(x => x.name.includes(this.props.searchTerm))
         }
         return (    
             <table class="table">
