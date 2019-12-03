@@ -72,7 +72,9 @@ function FlightsList(props) {
             </thead>
 
             <tbody>
+
             { renderFlights()}
+
             </tbody>
         </table>
     )
