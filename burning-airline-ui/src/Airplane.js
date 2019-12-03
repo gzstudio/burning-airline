@@ -68,5 +68,4 @@ class AirplanesList extends React.Component {
         )
     }
 }
-
 export default Airplane;
