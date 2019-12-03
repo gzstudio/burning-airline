@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import {Router, Link} from '@reach/router';
+import {Link} from '@reach/router';
 const SERVER_URL = 'http://localhost:3000/';
 
 class Flight extends React.Component {
@@ -48,7 +48,7 @@ function FlightsList(props) {
         {
             return(props.flights.map(f => (<tr>
                 <td>{f.date}</td>      
-                <td><Link to={`/FlightDetails/${f.id}`}>{f.flight_number}</Link>
+                <td><Link to={`/flights/${f.id}`}>{f.flight_number}</Link>
                 </td>
                 <td>{f.origin} > {f.destination}</td>
                 <td>{props.airplanes[f.airplane_id].name}</td>

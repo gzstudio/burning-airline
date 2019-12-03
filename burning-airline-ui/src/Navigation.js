@@ -3,6 +3,8 @@ import {Router, Link} from '@reach/router';
 import Flight from './Flight'
 import Airplane from './Airplane'
 import User from './User';
+import FlightDetails from './FlightDetails'
+
 
 class Navigation extends React.Component {
     render() {
@@ -22,6 +24,7 @@ class Navigation extends React.Component {
                     <Airplane path='/airplane' />
                     <Flight path='/flight' />
                     <User path=' /user/:userId' /> 
+                    <FlightDetails path="flights/:flightId" />
                 </Router>
                 </div>
 
