@@ -10,16 +10,16 @@ class Navigation extends React.Component {
     render() {
         return(
             <React.Fragment>
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><Link class="nav-link" to="airplane">Planes</Link></li>
-                        <li class="nav-item"><Link class="nav-link" to="flight">Flights</Link></li>
-                        <li class="nav-item"><Link class="nav-link" to="user">User</Link></li>
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <ul className="navbar-nav">
+                        <li className="nav-item"><Link className="nav-link" to="airplane">Planes</Link></li>
+                        <li className="nav-item"><Link class="nav-link" to="flight">Flights</Link></li>
+                        <li className="nav-item"><Link class="nav-link" to="user">User</Link></li>
                     </ul>
 
                 </nav>
                 
-                <div class="container">
+                <div className="container">
                 <Router>
                     <Airplane path='/airplane' />
                     <Flight path='/flight' />
