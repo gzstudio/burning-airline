@@ -44,7 +44,7 @@ class SeatingList extends React.Component {
                             return (
                                 <tr>
                                 {   row.map(
-                                    column => <td>{column}</td> 
+                                    column => <td id={`${column}`}>{column}</td> 
                                 )}
                                 </tr>
                             )
