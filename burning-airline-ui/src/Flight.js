@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import {Link} from '@reach/router';
+
 const SERVER_URL = 'http://localhost:3000/';
 
 class Flight extends React.Component {

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+
 const SERVER_URL = 'http://localhost:3000/';
 
 class FlightDetails extends React.Component {
@@ -23,15 +24,28 @@ class FlightDetails extends React.Component {
     }
 
     render() {
-        return(
-            <div>
-                <h3 className="text-left">Flight : {this.state.flight.flight_number} <br/>
-                {this.state.airplane.name}<br/>
-                {this.state.airplane.cols}<br/>
-                {this.state.airplane.rows}
-                </h3>
-                
-            </div>
+            
+        return(            
+            <table classname="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Flight</th>
+                        <th scope="col">Airplane Number</th>
+                        <th scope="col">Cols</th>
+                        <th scope="col">Rows</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>{this.state.flight.flight_number}</td>
+                        <td>{this.state.airplane.name}</td>
+                        <td>{this.state.airplane.cols}</td>
+                        <td>{this.state.airplane.rows}</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         )
     }
 }
