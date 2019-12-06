@@ -13,8 +13,8 @@ class Navigation extends React.Component {
                 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                     <ul className="navbar-nav">
                         <li className="nav-item"><Link className="nav-link" to="airplane">Planes</Link></li>
-                        <li className="nav-item"><Link class="nav-link" to="flight">Flights</Link></li>
-                        <li className="nav-item"><Link class="nav-link" to="user">User</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="flight">Flights</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to="user">User</Link></li>
                     </ul>
 
                 </nav>
